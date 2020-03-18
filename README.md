@@ -18,6 +18,11 @@
 ## 3. 테이블 
 
 ```sql
+create user pos identified by pos;
+GRANT all privileges TO pos;
+```
+
+```sql
 create table sale(
 sno number primary key,
 menu varchar2(20) not null,
