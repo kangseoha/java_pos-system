@@ -1,0 +1,120 @@
+
+
+
+
+
+drop table sale;
+create table sale(
+sno number primary key,
+menu varchar2(20) not null,
+count number,
+price number not null,
+reg_date date default sysdate);
+
+drop sequence sno_seq;
+create sequence sno_seq;
+
+insert into sale values(sno_seq.nextval,'떡볶이','1','5000');
+
+drop table menu;
+create table menu(
+mno number not null, 
+menu varchar2(20) not null,
+price number not null);
+
+insert into menu values(1,'떡볶이',3000);
+
+insert into menu values(2,'치즈떡볶이',3500);
+
+insert into menu values(3,'크림떡볶이',4000);
+
+insert into menu values(4,'김밥',2000);
+
+insert into menu values(5,'순대',3000);
+
+insert into menu values(6,'어묵',3000);
+
+insert into menu values(7,'참치마요컵밥',3500);
+
+insert into menu values(8,'튀김',3000);
+
+insert into menu values(9,'쿨피스',1500);
+
+drop table Inventory;
+create table Inventory(
+ino number primary key,
+element varchar2(20) not null,
+count number);
+
+drop sequence ino_seq;
+create sequence ino_seq;
+
+insert into Inventory values(ino_seq.nextval,'떡',1000);
+insert into Inventory values(ino_seq.nextval,'어묵',1000);
+insert into Inventory values(ino_seq.nextval,'소스',1000);
+insert into Inventory values(ino_seq.nextval,'치즈',1000);
+insert into Inventory values(ino_seq.nextval,'크림',1000);
+insert into Inventory values(ino_seq.nextval,'김밥',1000);
+insert into Inventory values(ino_seq.nextval,'순대',1000);
+insert into Inventory values(ino_seq.nextval,'어묵',1000);
+insert into Inventory values(ino_seq.nextval,'참치마요컵밥',1000);
+insert into Inventory values(ino_seq.nextval,'튀김',1000);
+insert into Inventory values(ino_seq.nextval,'쿨피스',1000);
+
+drop table bill;
+create table bill(
+bno number primary key,
+menu1 varchar2(20) not null,
+count1 varchar2(20),
+price1 varchar2(20), 
+menu2 varchar2(20),
+count2 varchar2(20),
+price2 varchar2(20), 
+menu3 varchar2(20),
+count3 varchar2(20),
+price3 varchar2(20), 
+menu4 varchar2(20),
+count4 varchar2(20),
+price4 varchar2(20), 
+menu5 varchar2(20),
+count5 varchar2(20),
+price5 varchar2(20),
+sumprice number,
+reg_date date default sysdate);
+
+drop sequence bno_seq;
+create sequence bno_seq;
+
+drop table employee;
+   CREATE TABLE EMPLOYEE
+   (   ENO NUMBER, 
+   EPW VARCHAR2(20 BYTE), 
+   ENAME VARCHAR2(20 BYTE), 
+   EPOSITION VARCHAR2(20 BYTE), 
+   ETEL VARCHAR2(20 BYTE)
+   )  ;
+
+
+Insert into EMPLOYEE (ENO,EPW,ENAME,EPOSITION,ETEL) values (1000,'1234','강서하','A2','010-3820-4030');
+Insert into EMPLOYEE (ENO,EPW,ENAME,EPOSITION,ETEL) values (1001,'1234','이동관','A1','010-1111-1234');
+
+
+drop table schedule;
+create table schedule(
+ename varchar2(20),
+start_time number,
+end_time number
+);
+
+Insert into schedule values('강서하',15,22);
+Insert into schedule values('이동관',15,22);
+
+
+commit;
+
+
+
+
+
+
+
